@@ -1,7 +1,7 @@
 # Zephyr Build System Within Docker
 This repository includes a docker setup for building [Zephyr](https://github.com/zephyrproject-rtos/zephyr) based projects.
 It's based on Ubuntu 20.04 and lighter than the (semi-)official image.
-Mainly because it only installs the SDK-included toolschains doens't run a X and VNC server.
+Mainly because it only installs the SDK-included toolschains doens't run an X.org or VNC server.
 
 ## Create a Project
 To create a new project, start the container:
