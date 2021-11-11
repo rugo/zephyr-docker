@@ -36,7 +36,7 @@ To build, for example, the blinky sample for the [Giant Gecko board](https://www
 
 ```bash
 container> cd myproject/zephyr/
-container> west build -p auto -b efm32gg_stk3701a samples/basic/blink
+container> west build -p auto -b efm32gg_stk3701a samples/basic/blinky
 ```
 
 On the host you can now flash `zephyr_workspaces/myproject/zephyr/build/zephyr/zephyr.bin` onto the board.
