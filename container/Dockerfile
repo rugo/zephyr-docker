@@ -11,7 +11,7 @@ RUN apt-get -y update && \
     make gcc gcc-multilib g++-multilib libsdl2-dev && apt-get upgrade -y && \
 	rm -rf /var/lib/apt/lists/*
 
-RUN wget https://apt.kitware.com/kitware-archive.sh && bash kitware-archive.sh
+RUN wget https://apt.kitware.com/kitware-archive.sh && bash kitware-archive.sh && apt-get upgrade -y
 
 RUN pip3 install west
 RUN west init ~/example_proj && cd ~/example_proj && west update && west zephyr-export
