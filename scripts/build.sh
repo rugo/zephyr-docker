@@ -3,12 +3,17 @@
 set -o nounset
 set -o errexit
 
-WORKSPACE_NAME=testkem
-WORKSPACE_DIR=/root/workspaces/${WORKSPACE_NAME}
+WORKSPACE_NAME=kemtls-experiment
+WORKSPACE_BASE_DIR=/root/workspaces
+WORKSPACE_DIR=${WORKSPACE_BASE_DIR}/${WORKSPACE_NAME}
+WORKSPACE_URL="https://git.fslab.de/rgonza2s/zephyr-project.git"
 
 if [ ! -d $WORKSPACE_DIR ]; then
-    echo "No '$WORKSPACE_DIR' folder."
-    exit 1
+    echo "No '$WORKSPACE_DIR' folder. Initializing workspace from ${WORKSPACE_URL}."
+    mkdir -p ${WORKSPACE_DIR}
+    cd ${WORKSPACE_DIR}
+    west init -m ${WORKSPACE_URL}
+    cd
 fi
 
 cd $WORKSPACE_DIR
