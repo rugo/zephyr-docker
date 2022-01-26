@@ -4,3 +4,4 @@ services:
     build: container
     volumes:
       - ./zephyr_workspaces:/root/workspaces
+      - ./scripts:/root/scripts
