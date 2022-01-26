@@ -25,7 +25,7 @@ container> west zephyr-export
 On the host-side you'll probably have to align the permissions, e.g. with:
 
 ```bash
-host> chown $(whoami): -R zerphyr_workspaces/myproject
+host> sudo chown $(whoami): -R zerphyr_workspaces/myproject
 ```
 
 Now you can edit the files in your project on you host machine.
