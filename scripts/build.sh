@@ -18,7 +18,7 @@ if [ ! -d $WORKSPACE_DIR ]; then
     cd
 fi
 
-if [ "$#" -gt "1" ]; then
+if [ $# -gt 0 ]; then
     if [ "$1" == "--rebuild" ]; then
         cd ${WORKSPACE_DIR}
         if [ -d ${BUILD_DIR} ]; then
