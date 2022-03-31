@@ -20,3 +20,5 @@ RUN pip3 install -r ~/example_proj/zephyr/scripts/requirements.txt
 RUN cd ~ && wget https://github.com/zephyrproject-rtos/sdk-ng/releases/download/v0.13.1/zephyr-sdk-0.13.1-linux-x86_64-setup.run &&  \
     chmod +x zephyr-sdk-0.13.1-linux-x86_64-setup.run && \
     ./zephyr-sdk-0.13.1-linux-x86_64-setup.run --quiet -- -d ~/zephyr-sdk-0.13.1
+
+RUN apt-get update && apt-get upgrade -y

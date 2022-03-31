@@ -19,17 +19,19 @@ if [ ! -d $WORKSPACE_DIR ]; then
 fi
 
 if [ $# -gt 0 ]; then
-    if [ "$1" == "--rebuild" ]; then
+    if [[ "$@" =~ "--rebuild" ]]; then
         cd ${WORKSPACE_DIR}
         if [ -d ${BUILD_DIR} ]; then
             echo "Erasing build dir"
             rm -rf $BUILD_DIR
         fi
+        cd
+    fi
+    if [[ "$@" =~ "--update" ]]; then
+        cd ${WORKSPACE_DIR}
         echo "Updating dependencies"
         west update
         cd
-    else
-        echo "[$0] Unknown command line option: $1"
     fi
 fi
 
