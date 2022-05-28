@@ -3,10 +3,17 @@
 set -o nounset
 set -o errexit
 
-WORKSPACE_NAME=kemtls-experiment
 WORKSPACE_BASE_DIR=/root/workspaces
+
+if [[ "$@" =~ "--pqtls" ]]; then
+    WORKSPACE_URL="https://git.fslab.de/rgonza2s/zephyr-project-pqtls.git"
+    WORKSPACE_NAME=pqtls-experiment
+else
+    WORKSPACE_URL="https://git.fslab.de/rgonza2s/zephyr-project.git"
+    WORKSPACE_NAME=kemtls-experiment        
+fi
+
 WORKSPACE_DIR=${WORKSPACE_BASE_DIR}/${WORKSPACE_NAME}
-WORKSPACE_URL="https://git.fslab.de/rgonza2s/zephyr-project.git"
 BUILD_DIR=${WORKSPACE_DIR}/build
 
 if [ ! -d $WORKSPACE_DIR ]; then
