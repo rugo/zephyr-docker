@@ -10,7 +10,7 @@ if [[ "$@" =~ "--pqtls" ]]; then
     WORKSPACE_NAME=pqtls-experiment
 else
     WORKSPACE_URL="https://git.fslab.de/rgonza2s/zephyr-project.git"
-    WORKSPACE_NAME=kemtls-experiment        
+    WORKSPACE_NAME=kemtls-experiment
 fi
 
 WORKSPACE_DIR=${WORKSPACE_BASE_DIR}/${WORKSPACE_NAME}
@@ -23,6 +23,11 @@ if [ ! -d $WORKSPACE_DIR ]; then
     west init -m ${WORKSPACE_URL}
     west update
     cd
+fi
+
+if [[ "$@" =~ "--init" ]]; then
+    echo "Done with initialization"
+    exit 0
 fi
 
 if [ $# -gt 0 ]; then
